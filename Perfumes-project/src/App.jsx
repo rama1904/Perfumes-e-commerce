@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import NavbarComponent from './components/NavbarComponent';
 import ItemContainer from "./components/Itemcontainer";
 import CartWidget from "./components/Cartwidget";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <NavbarComponent />  
       <div className="container mt-4">
         <h1>Perfumes</h1>
         <ItemContainer />
@@ -15,6 +15,7 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
 

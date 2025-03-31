@@ -1,6 +1,5 @@
 import React from 'react';
-
-function NavbarComponent() {
+function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -26,4 +25,4 @@ function NavbarComponent() {
   );
 }
 
-export default NavbarComponent;
+export default Navbar;
