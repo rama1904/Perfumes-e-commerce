@@ -1,18 +1,33 @@
 import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
 
 function CartWidget() {
-  const cartItems = 5; 
+  const itemCount = 3;
+
+  const styles = {
+    container: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      backgroundColor: '#f8f8f8',
+      padding: '6px 12px',
+      borderRadius: '20px',
+      fontWeight: 'bold',
+      position: 'absolute',
+      top: '10px',
+      right: '20px',
+      boxShadow: '0px 2px 6px rgba(0,0,0,0.1)'
+    }
+  };
 
   return (
-    <div className="cart-widget position-fixed bottom-0 end-0 p-3">
-      <div className="bg-danger rounded-circle p-2">
-        <FaShoppingCart size={30} className="text-white" />
-        {cartItems > 0 && <span className="badge bg-light text-dark position-absolute top-0 start-100 translate-middle">{cartItems}</span>}
-      </div>
+    <div style={styles.container}>
+      <span role="img" aria-label="carrito" style={{ fontSize: '24px' }}>🛒</span>
+      <span>{itemCount}</span>
     </div>
   );
 }
+
+
 
 export default CartWidget;
 
