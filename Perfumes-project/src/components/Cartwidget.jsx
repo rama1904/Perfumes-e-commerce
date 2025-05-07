@@ -12,10 +12,12 @@ function CartWidget() {
       padding: '6px 12px',
       borderRadius: '20px',
       fontWeight: 'bold',
-      position: 'absolute',
-      top: '10px',
-      right: '20px',
-      boxShadow: '0px 2px 6px rgba(0,0,0,0.1)'
+      // position: 'absolute',
+      // top: '40px',
+      // right: '20px',
+      boxShadow: '0px 2px 6px rgba(0,0,0,0.1)',
+      width:"70px"
+      
     }
   };
 

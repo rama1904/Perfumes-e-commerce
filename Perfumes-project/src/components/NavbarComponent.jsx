@@ -4,7 +4,10 @@ import CartWidget from './Cartwidget';
 
 function NavbarComponent() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark"style={{width:"100vw", position:"absolute" , top:"0" , zIndex:"999"}}  >
+     <nav className="bg-white shadow-md h-20 px-6 flex items-center">
+</nav>
+
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">Perfume Shop</Link>
 
@@ -20,15 +23,15 @@ function NavbarComponent() {
             <li className="nav-item">
               <Link className="nav-link" to="/category/perfumes">Perfumes</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/category/ofertas">Ofertas</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" to="/contact">Contacto</Link>
             </li>
-          </ul>
+          </ul> <CartWidget />
         </div>
-        <CartWidget />
+        
       </div>
     </nav>
   );

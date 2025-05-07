@@ -10,7 +10,7 @@ function ItemDetailContainer() {
       setProduct(found);
     }, [id]);
   
-    if (!product) return <p>Cargando...</p>;
+    if (!product) return <p></p>;
   
     return (
       <div>

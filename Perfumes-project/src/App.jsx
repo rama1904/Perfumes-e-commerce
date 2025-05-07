@@ -6,23 +6,28 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import ItemListContainer from './components/ItemListcontainer';
 import ItemDetailContainer from './components/Itemdetailcontainer';
 import Contact from './components/contacto';
+import Body from "./components/body.jsx"
+import Perfumes from "./components/Perfumes.jsx"
+
+
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <CartWidget />
+      
+      {/* <CartWidget /> */}
 
       <div className="container mt-4">
-        <h1>Perfumes</h1>
+        
+        
 
         {/* <img src="/images/le-male.webp" alt="Le Male" style={{ width: '200px', margin: '10px' }} />
         <img src="/images/scandal.webp" alt="Scandal" style={{ width: '200px', margin: '10px' }} />
         <img src="/images/tom-ford.webp" alt="Tom Ford" style={{ width: '200px', margin: '10px' }} /> */}
 
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/" element={<Body/>} />
+          <Route path="/category/:id" element={<Perfumes />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Navigate to="/" replace />} />

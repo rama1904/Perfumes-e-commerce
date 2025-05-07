@@ -18,14 +18,25 @@ function ItemListContainer() {
   return (
     <div>
       <h2>Catálogo</h2>
-      {products.map(prod => (
-        <div key={prod.id}>
-          <h3>{prod.name}</h3>
-          <img src={"/images/"+prod.image} alt="" />
-          <Link to={`/item/${prod.id}`}>Ver detalle</Link>
-        </div>
-      ))}
+      
+      <div className='d-flex'>
+  {products.map((prod, index) => (
+    <div className="card" style={{width:"600px"}} key={prod.id || index}>
+      <h3>{prod.name}</h3>
+      <img src={prod.image} alt={prod.name} className='img figure-img img-fluid' />
+      <Link to={`/item/${prod.id}`}>Ver detalle</Link>
     </div>
+  ))}
+</div>
+
+          
+        
+        </div>
+    
+        
+        
+      
+  
   );
 }
 
