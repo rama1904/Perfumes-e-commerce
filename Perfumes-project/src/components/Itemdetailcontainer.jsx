@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import productsData from '../Data/Products';
+
 function ItemDetailContainer() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);

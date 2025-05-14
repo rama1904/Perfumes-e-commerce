@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import productsData from '../Data/Products';
 
+
 function ItemListContainer() {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
@@ -21,10 +22,10 @@ function ItemListContainer() {
       
       <div className='d-flex'>
   {products.map((prod, index) => (
-    <div className="card" style={{width:"600px"}} key={prod.id || index}>
+    <div className="card" style={{width:"600px"}} key={`${prod.id}-${index}`}>
       <h3>{prod.name}</h3>
       <img src={prod.image} alt={prod.name} className='img figure-img img-fluid' />
-      <Link to={`/item/${prod.id}`}>Ver detalle</Link>
+      <Link to={`/item/${prod.id}`}></Link>
     </div>
   ))}
 </div>
