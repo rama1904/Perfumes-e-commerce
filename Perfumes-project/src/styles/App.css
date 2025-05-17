@@ -76,7 +76,7 @@ body {
 }
 
 /* PRODUCTOS */
-.product-list {
+/* .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
@@ -111,8 +111,8 @@ body {
 .product-card .price {
   color: crimson;
   font-weight: bold;
-  font-size: 1rem;
-}
+  font-size: 1rem; */
+
 
 /* FOOTER */
 .footer {

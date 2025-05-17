@@ -1,41 +1,63 @@
 import React from 'react';
-import Navbar from './components/NavbarComponent';
+import NavbarComponent from './components/NavbarComponent.jsx';
 import ItemContainer from "./components/Itemcontainer";
 import CartWidget from "./components/Cartwidget";
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, } from 'react-router-dom';
 import ItemListContainer from './components/ItemListcontainer';
 import ItemDetailContainer from './components/Itemdetailcontainer';
 import Contact from './components/contacto';
 import Body from "./components/body.jsx"
 import Perfumes from "./components/Perfumes.jsx"
-
+import CartContextProvider from './components/context/CartContext.jsx';
+import Cart from './components/cart.jsx';
 
 
 function App() {
   return (
     <Router>
-      
-      {/* <CartWidget /> */}
-
-      <div className="container mt-4">
-        
-        
-
-        {/* <img src="/images/le-male.webp" alt="Le Male" style={{ width: '200px', margin: '10px' }} />
-        <img src="/images/scandal.webp" alt="Scandal" style={{ width: '200px', margin: '10px' }} />
-        <img src="/images/tom-ford.webp" alt="Tom Ford" style={{ width: '200px', margin: '10px' }} /> */}
-
+      <CartContextProvider> {/* Aquí envuelves los componentes que necesitan el contexto */}
         <Routes>
-          <Route path="/" element={<Body/>} />
-          <Route path="/category/:id" element={<Perfumes />} />
+          <Route path="/" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Navigate to="/" replace />} />
         </Routes>
-      </div>
+      </CartContextProvider>
     </Router>
   );
 }
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//     <CartContextProvider>
+    
+//     <Router>
+      
+//       {/* <CartWidget /> */}
+
+//       <div className="container mt-4">
+        
+        
+
+//         {/* <img src="/images/le-male.webp" alt="Le Male" style={{ width: '200px', margin: '10px' }} />
+//         <img src="/images/scandal.webp" alt="Scandal" style={{ width: '200px', margin: '10px' }} />
+//         <img src="/images/tom-ford.webp" alt="Tom Ford" style={{ width: '200px', margin: '10px' }} /> */}
+
+//         <Routes>
+//           <Route path="/" element={<Body/>} />
+//           <Route path="/category/:id" element={<Perfumes />} />
+//           <Route path="/item/:id" element={<ItemDetailContainer />} />
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="/shop" element={<Navigate to="/" replace />} />
+//         </Routes>
+//       </div>
+//     </Router>
+
+//     </CartContextProvider>
+//   );
+// }
 
 
 export default App;
