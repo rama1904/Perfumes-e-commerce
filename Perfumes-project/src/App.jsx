@@ -12,16 +12,19 @@ import CartContextProvider from './components/context/CartContext.jsx';
 import Cart from './components/cart.jsx';
 
 
+
 function App() {
   return (
     <Router>
-      <CartContextProvider> {/* Aquí envuelves los componentes que necesitan el contexto */}
+      <CartContextProvider>
+        <NavbarComponent></NavbarComponent>
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/" element={<Body/>} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Navigate to="/" replace />} />
+          <Route path="/category/:id" element={<ItemListContainer />} />
         </Routes>
       </CartContextProvider>
     </Router>

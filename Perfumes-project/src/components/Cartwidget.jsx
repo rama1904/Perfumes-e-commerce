@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import Cart from './cart';
 function CartWidget() {
   const itemCount = 3;
 
@@ -22,10 +23,11 @@ function CartWidget() {
   };
 
   return (
-    <div style={styles.container}>
+  <Link to={"/cart"}><div style={styles.container}>
       <span role="img" aria-label="carrito" style={{ fontSize: '24px' }}>🛒</span>
       <span>{itemCount}</span>
-    </div>
+    </div></Link>
+   
   );
 }
 
